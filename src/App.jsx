@@ -34,7 +34,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path = "/ " element = {<Login/>} />
-        <Route path = "/project" element = {<Projects/>} />
+        <Route path = "/projects" element = {<Projects/>} />
         <Route path = "/tasks" element = {<Tasks/>} />
 
       </Routes>

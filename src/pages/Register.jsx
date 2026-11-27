@@ -90,10 +90,7 @@ function Register() {
         }
 
         .container {
-          min-height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          min-height: 100vh;display: flex;justify-content: center;align-items: center;
           background: linear-gradient(135deg, #667eea, #764ba2);
           font-family: Arial, sans-serif;
         }

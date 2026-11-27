@@ -66,36 +66,42 @@ import Tasks from "./pages/tasks";*/
 
 
 
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Login from "./pages/login";
-import Tasks from "./pages/tasks";
-import Projects from "./pages/project";
-import Calender from "./pages/Calender";
-import Team from "./pages/Team";
-import Client from "./pages/Client";
-import Dashboard from "./pages/Dashboard";
-import Settings from "./pages/Settings";
-import Register from "./pages/Register";
-
+import Login from "../src/pages/login";
+import Projects from '../src/pages/projects';
+import Tasks from '../src/pages/tasks';
+import Team from '../src/pages/team';
+import Client from '../src/pages/clients';
+import Dashboard from '../src/pages/dashboard';
+import Calender from '../src/pages/calender';
+import Settings from '../src/pages/settings';
+import Clients from "../src/pages/clients";
+import Register from "../src/pages/register";
+import AdminDashboard from "./pages/Admin/dashboard";
+import AdminSettings from "./pages/Admin/settings.jsx";
+import AdminUserDetails from "./pages/Admin/userDetails";
+import AdminLayout from "./pages/Admin/adminlayout";
 function App() {
-  return (
-    <BrowserRouter>
-    <Routes>
-  <Route path="/" element={<Register />} />
-  <Route path="/login" element={<Login />} />
-
-  <Route path="/projects" element={<Projects />} />
-  <Route path="/tasks" element={<Tasks />} />
-  <Route path="/Calender" element={<Calender />} />
-  <Route path="/Team" element={<Team />} />
-  <Route path="/settings" element={<Settings />} />
-  <Route path="/Dashboard" element={<Dashboard />} />
-  <Route path="/Client" element={<Client />} />
-</Routes>
+  return ( 
+     <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path = '/tasks' element={<Tasks/>}/>
+        <Route path='/team' element={<Team/>}/>
+        <Route path='/clients' element={<Clients/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/calender' element={<Calender/>}/>
+        <Route path='/settings' element={<Settings/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/admin' element={<AdminLayout/>}>
+           
+           <Route path='admindashboard' element={<AdminDashboard/>}/>
+           <Route path='settings' element={<AdminSettings/>}/>
+           <Route path='userdetails' element={<AdminUserDetails/>}/>
+        </Route>
+      </Routes>
     </BrowserRouter>
-  );
+   );
 }
-
 export default App;

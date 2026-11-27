@@ -65,7 +65,7 @@ import Tasks from "./pages/tasks";*/
 
 
 
-import{BrowserRouter ,Routes,Route} from react-route-dom
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from '../src/pages/login';
 import Tasks from './pages/tasks';
 import Projects from './pages/project';
@@ -75,11 +75,17 @@ import Client from './pages/Client';
 import Dashboard from './pages/Dashboard';
 import Settings from './pages/Settings';
 import Register from './pages/Register';
+import Adminout from "./pages/Admin/Adminout";
+import AdminDashboard from "./pages/Admin/Dashboard";
+import AdminSettings from "./pages/Admin/Settings";
+import AdminUserdetail from "./pages/Admin/userdetail";
+
+
 function App() {
   return ( 
   <BrowserRouter>
   <Routes> 
-   <Route path = "/ " element = {<Login/>} />
+   <Route path = "/"element = {<Login/>} />
     <Route path = "/projects" element = {<Projects/>} />
     <Route path = "/tasks" element = {<Tasks/>} />
     <Route path = "/Calender" element = {<Calender/>} />
@@ -88,6 +94,15 @@ function App() {
     <Route path = "/Dashboard" element = {<Dashboard/>} />
     <Route path = "/Client" element = {<Client/>} />
     <Route path = "/Register" element ={<Register/>} />
+    <Route path = "/Adminout" element ={<Adminout/>} >
+      <Route path ="AdminDashboard" element = {<AdminDashboard/>}/>
+      <Route path ="AdminSettings" element = {<AdminSettings/>}/>
+      <Route path ="Adminuserdetail" element = {<AdminUserdetail/>}/>
+      <Route path ="Adminout" element = {<Adminout/>}/>
+      
+
+    </Route>
+     
     
   </Routes>
   </BrowserRouter>

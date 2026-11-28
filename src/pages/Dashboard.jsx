@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function Dashboard() {
@@ -7,13 +7,20 @@ function Dashboard() {
     function displaydata(){
         setUserdata(location.state);
         console.log(userdata)
-    }    
+    }  
+
+
+    const[count,setcount]=useState(0);
+    useEffect(()=>{
+       console.log(userdata);
+    },[]) 
 
     return ( 
-        <>
-            <button onClick={displaydata}>button</button>
-        </>
+    <div>
+            <button onClick={() => setcount(count + 1)}></button>
+        </div>
      );
 }
+
 
 export default Dashboard;

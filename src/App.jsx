@@ -56,10 +56,7 @@ export default App;
     </BrowserRouter>*/
 
 
-/*import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-import Login from "./pages/login";
-import Project from "./pages/projects";
-import Tasks from "./pages/tasks";*/
+
 
 
 
@@ -67,20 +64,23 @@ import Tasks from "./pages/tasks";*/
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "../src/pages/login";
-import Projects from '../src/pages/projects';
-import Tasks from '../src/pages/tasks';
-import Team from '../src/pages/team';
-import Client from '../src/pages/clients';
-import Dashboard from '../src/pages/dashboard';
-import Calender from '../src/pages/calender';
-import Settings from '../src/pages/settings';
-import Clients from "../src/pages/clients";
-import Register from "../src/pages/register";
+
+import Login from "./pages/login";
+import Projects from "./pages/project";
+import Tasks from "./pages/tasks";
+import Team from "./pages/Team";
+import Clients from "./pages/Client";
+import Dashboard from "./pages/Dashboard";
+import Calender from "./pages/Calender";
+import Settings from "./pages/Settings";
+import Register from "./pages/Register";
+
+// Admin imports
 import AdminDashboard from "./pages/Admin/dashboard";
-import AdminSettings from "./pages/Admin/settings.jsx";
-import AdminUserDetails from "./pages/Admin/userDetails";
+import AdminSettings from "./pages/Admin/settings";
+import AdminUserDetails from "./pages/Admin/userDetail";
 import AdminLayout from "./pages/Admin/adminlayout";
+
 function App() {
   return ( 
      <BrowserRouter>
@@ -88,7 +88,7 @@ function App() {
         <Route path='/' element={<Login/>} />
         <Route path='/projects' element={<Projects/>}/>
         <Route path = '/tasks' element={<Tasks/>}/>
-        <Route path='/team' element={<Team/>}/>
+        <Route path='/Team' element={<Team/>}/>
         <Route path='/clients' element={<Clients/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/calender' element={<Calender/>}/>

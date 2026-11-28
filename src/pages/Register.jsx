@@ -68,17 +68,42 @@ function Register() {
       </form>
     </div>
   );
-}
+}*/
 
-export default Register;*/
-
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
 
+  const navigate = useNavigate();
+
+  const [formdata, setFormdata] = useState({
+    name: "",
+    email: "",
+    password: "",
+    age: ""
+  });
+
+  function handlechange(e) {
+    setFormdata({
+      ...formdata,
+      [e.target.name]: e.target.value
+    });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+
+    // Store registration details
+    localStorage.setItem(
+      "registerdata",
+      JSON.stringify(formdata)
+    );
+
     alert("Registration Successful!");
+
+    // Navigate to Login
+    navigate("/");
   }
 
   return (
@@ -90,7 +115,10 @@ function Register() {
         }
 
         .container {
-          min-height: 100vh;display: flex;justify-content: center;align-items: center;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           background: linear-gradient(135deg, #667eea, #764ba2);
           font-family: Arial, sans-serif;
         }
@@ -150,6 +178,8 @@ function Register() {
             type="text"
             name="name"
             placeholder="Enter your name"
+            value={formdata.name}
+            onChange={handlechange}
             required
           />
 
@@ -158,6 +188,8 @@ function Register() {
             type="email"
             name="email"
             placeholder="Enter your email"
+            value={formdata.email}
+            onChange={handlechange}
             required
           />
 
@@ -166,6 +198,8 @@ function Register() {
             type="password"
             name="password"
             placeholder="Enter your password"
+            value={formdata.password}
+            onChange={handlechange}
             required
           />
 
@@ -174,11 +208,15 @@ function Register() {
             type="number"
             name="age"
             placeholder="Enter your age"
+            value={formdata.age}
+            onChange={handlechange}
             min="1"
             required
           />
 
-          <button type="submit">Submit</button>
+          <button type="submit">
+            Register
+          </button>
 
         </form>
 
@@ -188,3 +226,4 @@ function Register() {
 }
 
 export default Register;
+
